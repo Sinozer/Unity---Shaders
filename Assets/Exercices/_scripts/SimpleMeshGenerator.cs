@@ -15,8 +15,8 @@ public class SimpleMeshGenerator : MonoBehaviour
         Vector3[] vertices =
         {
             new(0, 0, 0),
-            new(20, 0, 0),
-            new(0, 30, 0)
+            new(2, 0, 0),
+            new(0, 2, 0)
         };
 
         // Indices that will determine in which order the vertices will be drawn.
@@ -28,6 +28,11 @@ public class SimpleMeshGenerator : MonoBehaviour
         Color[] colors =
         {
             Color.white, Color.red, Color.blue
+        };
+        
+        Vector2[] uvs =
+        {
+            new(0, 0.6f), new(0.4f, 0.6f), new(0.2f, 0.9f)
         };
 
         BuildMesh(_MeshName, vertices, indices, null, colors);
