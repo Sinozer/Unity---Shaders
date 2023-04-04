@@ -14,9 +14,9 @@ public class SimpleMeshGenerator : MonoBehaviour
     {
         Vector3[] vertices =
         {
-            new(0, 0, 0),
-            new(20, 0, 0),
-            new(0, 30, 0)
+            new(-1, 0, 0),
+            new(0, 2, 0),
+            new(1, 0, 0)
         };
 
         // Indices that will determine in which order the vertices will be drawn.
@@ -30,11 +30,17 @@ public class SimpleMeshGenerator : MonoBehaviour
             Color.white, Color.red, Color.blue
         };
 
-        BuildMesh(_MeshName, vertices, indices, null, colors);
+        Vector2[] uvs =
+        {
+            new (0.6f,0),
+            new (0.9f,0.5f),
+            new (0.6f,0.4f)
+        };
+
+        BuildMesh(_MeshName, vertices, indices, uvs, colors);
     }
 
-    protected void BuildMesh(string gameObjectName, Vector3[] vertices, int[] indices, Vector2[] uvs = null,
-        Color[] colors = null)
+    protected void BuildMesh(string gameObjectName, Vector3[] vertices, int[] indices, Vector2[] uvs = null, Color[] colors = null)
     {
         // Search in the scene if there is a GameObject called "gameObjectName". If yes, we destroy it.
         GameObject oldOne = GameObject.Find(gameObjectName);

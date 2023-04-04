@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Demo_Shader 3
+  m_Shader: {fileID: 4800000, guid: db46a32123b73594a9dabed8bf27a55f, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Albedo1:
+        m_Texture: {fileID: 2800000, guid: a29032b18ade1c54884c321d55136a10, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Albedo2:
+        m_Texture: {fileID: 2800000, guid: 57d90e8110875c94fa27100072be8c25, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - BlendAlbedo:
+        m_Texture: {fileID: 2800000, guid: a355fb7b1be685243941830029a9ba1e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - Blender: 1
+    - DistanceRange: 1
+    - _ReflDistort: 0.5
+    m_Colors:
+    - Color1: {r: 0, g: 0.33554316, b: 1, a: 1}
+    - Color2: {r: 0, g: 0.93474483, b: 1, a: 1}
+  m_BuildTextureStacks: []
