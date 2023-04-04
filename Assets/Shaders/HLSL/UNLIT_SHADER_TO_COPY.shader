@@ -34,7 +34,7 @@ Shader "Learning/Unlit/TO RENAME"
                 return o;
             }
 
-            float4 frag(v2f i) : SV_Target
+            float4 frag(v2f input) : SV_Target
             {
                 return float4(1,0,0,0); 
             }
