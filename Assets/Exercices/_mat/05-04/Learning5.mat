@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Learning5
+  m_Shader: {fileID: 4800000, guid: 612553985a97c9e4eadd6bcd0de1830e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: TextureMap
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - NoiseMap:
+        m_Texture: {fileID: 2800000, guid: edbc3bf04ab91de43b93e7ed800e045f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - TextureMap:
+        m_Texture: {fileID: 2800000, guid: a29032b18ade1c54884c321d55136a10, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - DistrubFactor: 0.156
+    - _ReflDistort: 0.5
+    m_Colors:
+    - ScrollingSpeed: {r: 2, g: 2, b: 0, a: 0}
+  m_BuildTextureStacks: []
