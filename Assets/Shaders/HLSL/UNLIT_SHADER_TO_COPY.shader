@@ -7,7 +7,7 @@ Shader "Learning/Unlit/TO RENAME"
     
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Opaque" "Queue"="Geometry"}
 
 		Pass
         {
