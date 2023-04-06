@@ -33,7 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Distortion: 0.2
-    - _Speed: 0.1
+    - _Distortion: 0.0313
+    - _Speed: 0.149
     m_Colors: []
   m_BuildTextureStacks: []
