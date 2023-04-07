@@ -18,5 +18,10 @@ public class BloodGauge : MonoBehaviour
         _sliderObject.SetActive(isActive);
         ParticleSystem.EmissionModule emission = _particleSystem.emission;
         emission.rateOverTime = _gauge;
+
+        if (!isActive)
+        {
+            _particleSystem.Clear();
+        }
     }
 }
