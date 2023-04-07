@@ -6,21 +6,17 @@ public class BloodGauge : MonoBehaviour
     [Header("Refs")]
     [SerializeField] private Slider _slider;
     [SerializeField] private GameObject _fillArea;
+    [SerializeField] private ParticleSystem _particleSystem;
 
-    private float _gauge;
+    [Header("Datas")]
+    [SerializeField] private int _gauge;
 
     private void Update()
     {
         _slider.value = _gauge;
-
-
-        if (_gauge == 0)
-        {
-            _fillArea.SetActive(false);
-        }
-        else
-        {
-            _fillArea.SetActive(true);
-        }
+        bool isActive = _gauge == 0 ? false : true;
+        _fillArea.SetActive(isActive);
+        ParticleSystem.EmissionModule emission = _particleSystem.emission;
+        emission.rateOverTime = _gauge;
     }
 }
