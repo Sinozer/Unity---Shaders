@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class Spell1 : SpellBehaviour
+public class Spell2 : SpellBehaviour
 {
     public void Start()
     {
@@ -14,7 +14,7 @@ public class Spell1 : SpellBehaviour
         if (!base.Use()) return false;
 
         // Do your things
-        Debug.LogWarning("Spell 1");
+        Debug.LogWarning("Spell 2");
 
         return true;
     }

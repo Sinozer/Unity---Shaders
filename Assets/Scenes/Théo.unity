@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22dea3675fb54ba458f714a568bf1443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spellsHolder: {fileID: 725344208}
   _spells: []
   _currentSpell: {fileID: 0}
 --- !u!114 &272340576
@@ -274,6 +275,12 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &725344208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6419264760466020803, guid: 4f12e9b96339fe74ca1ac8cd45c299f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 9178140344524050077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1557838903
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 6419264760466020803, guid: 4f12e9b96339fe74ca1ac8cd45c299f0,
         type: 3}
       propertyPath: m_Name
-      value: Spell1
+      value: Spells
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

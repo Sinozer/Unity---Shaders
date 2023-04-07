@@ -3,19 +3,28 @@ using UnityEngine;
 
 public class SpellManager : MonoBehaviour
 {
-    [SerializeReference] private List<SpellBehaviour> _spells = new();
+    [SerializeField] private GameObject _spellsHolder;
+    [SerializeField] private List<SpellBehaviour> _spells = new();
     [SerializeReference] private SpellBehaviour _currentSpell;
 
-    private void Start()
+    private void Awake()
     {
-        
+        if (!_spellsHolder) return;
+        var temp = _spellsHolder.GetComponents<SpellBehaviour>();
+
+        _spells.AddRange(temp);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(_currentSpell.SpellRef.Key)) Cast();
+        foreach (SpellBehaviour spell in _spells)
+        {
+            _currentSpell = spell;
+            if (Input.GetKeyDown(_currentSpell.SpellRef.Key))
+                Cast();
+        }
     }
-    
+
     public void Cast()
     {
         _currentSpell.Use();
