@@ -8,6 +8,7 @@ public class FollowPlayer : MonoBehaviour {
 
     private void Start() {
         _agent = GetComponent<NavMeshAgent>();
+        player = GameObject.Find("PlayerArmature").transform;
     }
 
     private void Update() {
