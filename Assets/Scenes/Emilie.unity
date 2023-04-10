@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 499835759}
   - component: {fileID: 499835758}
   - component: {fileID: 499835757}
+  - component: {fileID: 499835761}
+  - component: {fileID: 499835762}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -226,6 +228,35 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &499835761
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499835755}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!111 &499835762
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499835755}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: ef14fc058913bb64998795e554eac951, type: 2}
+  - {fileID: 7400000, guid: 44380f27de4c1e647af65ccfb63e468d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &751044485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5488,6 +5519,7 @@ MonoBehaviour:
   _slider: {fileID: 1396819090}
   _sliderObject: {fileID: 1396819088}
   _particleSystem: {fileID: 1415610725}
+  _animation: {fileID: 499835762}
   _gauge: 26
 --- !u!1 &1578933658
 GameObject:
