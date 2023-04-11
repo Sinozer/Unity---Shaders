@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InvisibilitySpell : SpellBehaviour
 {
-    public static event Action OnInvisibility;
+    public static event Action<bool> OnInvisibility;
 
     [SerializeField] private SkinnedMeshRenderer _mesh;
     [SerializeField] private Material _invisibilityMaterial;
@@ -15,7 +15,7 @@ public class InvisibilitySpell : SpellBehaviour
         // Do your things
         Debug.LogWarning("Invisibility");
 
-        OnInvisibility?.Invoke();
+        OnInvisibility?.Invoke(true);
 
         Material[] materials = new Material[3];
 
@@ -25,6 +25,9 @@ public class InvisibilitySpell : SpellBehaviour
         }
 
         _mesh.materials = materials;
+
+        //After CD
+        //OnInvisibility?.Invoke(false);
 
         return true;
     }
