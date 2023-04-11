@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: blend
-  m_Shader: {fileID: 4800000, guid: 28c069b2d2e54727b22e2c9496aaaa87, type: 3}
+  m_Name: WallMapShader
+  m_Shader: {fileID: 4800000, guid: ca04772a7a383644496350b390e05521, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,11 +22,18 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - ColorTexture:
+        m_Texture: {fileID: 2800000, guid: 558a05d7a0aa35e45af70c17dbf0d51e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Noise:
+        m_Texture: {fileID: 2800000, guid: 558a05d7a0aa35e45af70c17dbf0d51e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Blender: 0.235
-    m_Colors:
-    - _Color: {r: 0.8962264, g: 0.04650232, b: 0.04650232, a: 1}
-    - _Color2: {r: 0.08276967, g: 0.09587434, b: 0.5660378, a: 1}
+    - Distortion: 0.2
+    - Speed: 0.12
+    m_Colors: []
   m_BuildTextureStacks: []
