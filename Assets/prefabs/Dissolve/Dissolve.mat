@@ -46,7 +46,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Dissolve_Amount: 0.349
+    - _Dissolve_Amount: 0
     - _Dissolve_BorderSize: 0.02
     - _Dissolve_Strength: 40
     - _Metallic: 0
