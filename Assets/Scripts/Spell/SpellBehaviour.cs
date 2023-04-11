@@ -69,7 +69,7 @@ public abstract class SpellBehaviour : MonoBehaviour
     private void Awake()
     {
         SpellRef.Init();
-        _player = GameObject.Find("Player");
+        _player = GameObject.Find("PlayerArmature");
     }
 
     private void Update()
