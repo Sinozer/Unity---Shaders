@@ -15,7 +15,8 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _name: 1
   _description: Default Description
-  _cooldown: 3
+  _cooldown: 1
+  _lastDuration: 5
   _damage: 20
   _range: 10
   _key: 113
