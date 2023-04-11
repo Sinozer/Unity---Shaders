@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8986343f9862d744d9f0544544b3425e, type: 3}
-  m_Name: Spell3
+  m_Name: InvisibilitySpell
   m_EditorClassIdentifier: 
   _icon: {fileID: 0}
-  _name: Default Name
+  _name: Invisibility
   _description: Default Description
-  _cooldown: 3
-  _lastDuration: 5
-  _damage: 20
-  _range: 10
-  _key: 101
+  _cooldown: 15
+  _damage: 0
+  _range: 0
+  _key: 120
