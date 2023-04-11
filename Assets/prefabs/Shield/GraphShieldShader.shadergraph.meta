@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: b8bc966702c2c2740b5885010eade0dd
+<<<<<<<< Updated upstream:Assets/prefabs/Shield/GraphShieldShader.shadergraph.meta
+guid: 998317b318ec52941814a19ae6cda753
+========
+guid: 16580467aae18f843bc84c04220be0c1
+>>>>>>>> Stashed changes:Assets/prefabs/Rain/RainShaderGraph.shadergraph.meta
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
