@@ -1,9 +1,19 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "New Spell", menuName = "Spell")]
 public class Spell : ScriptableObject
 {
+    [Serializable]
+    private class SGameObject
+    {
+        public string key;
+        public GameObject value;
+    }
+
     public Sprite Icon { get => _icon; }
     [SerializeField] private Sprite _icon;
 
@@ -25,9 +35,17 @@ public class Spell : ScriptableObject
     public float Range { get => _range; }
     [SerializeField] private float _range = 10f;
 
+    [SerializeField] private List<SGameObject> _gameObjects = new();
     public Dictionary<string, GameObject> GameObjects = new();
 
     // /!\ QWERTY KEYBOARD /!\
     public KeyCode Key { get => _key; }
     [SerializeField] private KeyCode _key = KeyCode.X;
+
+    public void Init()
+    {
+        Debug.Log("Init Spell" + Name);
+        foreach (var gameObject in _gameObjects)
+            GameObjects[gameObject.key] = gameObject.value;
+    }
 }

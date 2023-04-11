@@ -13,6 +13,9 @@ public abstract class SpellBehaviour : MonoBehaviour
     public SpellState State { get => _state; }
     protected SpellState _state = SpellState.IDLE;
 
+    public GameObject Player { get => _player; }
+    protected GameObject _player;
+
     public void SetState(SpellState state)
     {
         switch (state)
@@ -49,7 +52,7 @@ public abstract class SpellBehaviour : MonoBehaviour
                 if (Cooldown > 0) _cooldown -= Mathf.Clamp(Time.deltaTime, 0f, SpellRef.Cooldown);
                 break;
         }
-        
+
         CheckState();
     }
 
@@ -58,10 +61,16 @@ public abstract class SpellBehaviour : MonoBehaviour
         get => _spellRef;
         set => _spellRef = value;
     }
-     [SerializeField] protected Spell _spellRef;
+    [SerializeField] protected Spell _spellRef;
 
     public float Cooldown { get => _cooldown; }
     protected float _cooldown;
+
+    private void Awake()
+    {
+        SpellRef.Init();
+        _player = GameObject.Find("PlayerArmature");
+    }
 
     private void Update()
     {

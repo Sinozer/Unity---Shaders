@@ -19,4 +19,7 @@ MonoBehaviour:
   _lastDuration: 5
   _damage: 20
   _range: 10
+  _gameObjects:
+  - key: Vfx
+    value: {fileID: 2975992520057885851, guid: 7f4d290188695e841906c87d919a0f6a, type: 3}
   _key: 119
