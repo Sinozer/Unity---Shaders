@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/prefabs/Shield/GraphShieldShader.shadergraph.meta
+guid: 5e71378f290b51e42b2e5cf29f2c9064
+========
+guid: 16580467aae18f843bc84c04220be0c1
+>>>>>>>> Stashed changes:Assets/prefabs/Rain/RainShaderGraph.shadergraph.meta
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}

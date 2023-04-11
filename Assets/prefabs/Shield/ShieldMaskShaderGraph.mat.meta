@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 7c083421786030a4897784528bef7a1c
+<<<<<<<< Updated upstream:Assets/prefabs/Shield/ShieldShader.mat.meta
+guid: b80ab070cfa9a67459c8d8a618a6bdc7
+========
+guid: 83a010d69b5075e4aaba472aa65f873f
+>>>>>>>> Stashed changes:Assets/prefabs/Vegetation/Bush/BushMaterial.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
