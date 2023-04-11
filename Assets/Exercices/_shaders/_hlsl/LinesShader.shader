@@ -1,11 +1,10 @@
-Shader "Learning/Unlit/WallMapShader"
+Shader "Learning/Unlit/LinesShader"
 {
     Properties
     {   
         // NOM_VARIABLE("NOM_AFFICHE_DANS_L'INSPECTOR", Shaderlab type) = defaultValue
-        Noise("Noise", 2D) = "black" {}
-        Distortion("Distortion", Range(0, 0.2)) = 0.1
-        Speed("Speed", Range(0, 0.2)) = 0.1
+        LinesTexture("Texture", 2D) = "white" {} 
+        Speed("Speed", float) = 1
     }
     
     SubShader
@@ -14,14 +13,14 @@ Shader "Learning/Unlit/WallMapShader"
 
 		Pass
         {
-            HLSLPROGRAM
+			HLSLPROGRAM
             #pragma vertex vert  
             #pragma fragment frag
 
             #include "UnityCG.cginc"
 
-			sampler2D Noise;
-			float Distortion, Speed;
+			sampler2D LinesTexture;
+			float Speed;
 			
 			struct vertexInput
             {
@@ -45,17 +44,10 @@ Shader "Learning/Unlit/WallMapShader"
 
             float4 frag(v2f input) : SV_Target
             {
-                float2 offset = Speed * _Time.y;
-
-                float2 disturbedOffset = tex2D(Noise, input.uv + offset).xy;
-                disturbedOffset *= Distortion;
-
-                float4 color = tex2D(Noise, input.uv + disturbedOffset);
-                float4 colorSend = {0,0,color.b,1};
-
-                
-                return colorSend;
+                float d = distance(float2(0.5,0.5), input.uv);
+                return tex2D(LinesTexture,d + Speed * _Time.x);
             }
+            
             ENDHLSL
         }
     }
