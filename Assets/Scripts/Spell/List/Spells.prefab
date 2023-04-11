@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8606418877167235593}
   - component: {fileID: 2507234175495846991}
   - component: {fileID: 4311102544184901409}
+  - component: {fileID: -3359534128055481330}
   m_Layer: 0
   m_Name: Spells
   m_TagString: Untagged
@@ -73,3 +74,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spellRef: {fileID: 11400000, guid: 0b1ba3137661dd243bcb012c2e9953f0, type: 2}
+--- !u!114 &-3359534128055481330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419264760466020803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a11d75bd0aa8d45bb3cde9de62df8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spellRef: {fileID: 11400000, guid: c94f0a31b14e219448502a35d5da0532, type: 2}
+  _mesh: {fileID: 0}
+  _invisibilityMaterial: {fileID: 2100000, guid: ef0e2f23b2b5ba44e844b5bf712cf600,
+    type: 2}
