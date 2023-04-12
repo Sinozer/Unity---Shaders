@@ -44,7 +44,6 @@ public class Spell : ScriptableObject
 
     public void Init()
     {
-        Debug.Log("Init Spell" + Name);
         foreach (var gameObject in _gameObjects)
             GameObjects[gameObject.key] = gameObject.value;
     }
