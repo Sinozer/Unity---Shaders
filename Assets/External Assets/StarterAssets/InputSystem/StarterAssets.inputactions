@@ -153,17 +153,6 @@
                 },
                 {
                     "name": "",
-                    "id": "e2f9aa65-db06-4c5b-a2e9-41bc8acb9517",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "StickDeadzone",
-                    "groups": "KeyboardMouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ed66cbff-2900-4a62-8896-696503cfcd31",
                     "path": "<Pointer>/delta",
                     "interactions": "",
