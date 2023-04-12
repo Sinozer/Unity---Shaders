@@ -1,8 +1,9 @@
 using System;
+using UnityEngine.VFX;
 using UnityEngine;
 
 [Serializable]
-public class Spell2 : SpellBehaviour
+public class Scan : SpellBehaviour
 {
     public void Start()
     {
@@ -14,6 +15,9 @@ public class Spell2 : SpellBehaviour
         if (!base.Use()) return false;
 
         // Do your things
+        GameObject vfx = Instantiate(SpellRef.GameObjects["Vfx"]);
+        vfx.transform.position = Player.transform.position;
+        Destroy(vfx, SpellRef.LastDuration);
 
         return true;
     }

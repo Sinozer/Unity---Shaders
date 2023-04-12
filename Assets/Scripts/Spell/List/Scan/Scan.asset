@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8986343f9862d744d9f0544544b3425e, type: 3}
-  m_Name: Spell2
+  m_Name: Scan
   m_EditorClassIdentifier: 
   _icon: {fileID: 0}
   _name: 2
@@ -21,5 +21,5 @@ MonoBehaviour:
   _range: 10
   _gameObjects:
   - key: Vfx
-    value: {fileID: 2975992520057885851, guid: 7f4d290188695e841906c87d919a0f6a, type: 3}
+    value: {fileID: 542789656469643734, guid: 81df27a133bb60f4abcb3ddf582a7787, type: 3}
   _key: 119
