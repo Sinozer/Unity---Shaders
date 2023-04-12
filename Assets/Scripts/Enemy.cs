@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour {
     public Transform player;
     
     private NavMeshAgent _agent;
+    private bool _isInvisible;
 
     private int _currentHealth;
 
@@ -12,10 +13,20 @@ public class Enemy : MonoBehaviour {
         _currentHealth = 5;
         _agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("PlayerArmature").transform;
+
+        //InvisibilitySpell.OnInvisibility += SetInvisiblity;
     }
 
     private void Update() {
-        _agent.SetDestination(player.position);
+        if (!_isInvisible)
+        {
+            _agent.SetDestination(player.position);
+        }
+    }
+
+    private void SetInvisiblity(bool value)
+    {
+        _isInvisible = value;
     }
 
     private void OnTriggerEnter(Collider other) {

@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Enemy
   - Spell
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Shield
+  - Entity
   - 
   - 
   - 

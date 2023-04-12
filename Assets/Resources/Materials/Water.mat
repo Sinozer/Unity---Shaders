@@ -43,6 +43,7 @@ Material:
     - _FDepth: 0.8
     - _FNoiseScale: -0.25
     - _FRippleSpeed: 0.3
+    - _FinalColorFactor: 1.9
     - _QueueControl: 0
     - _QueueOffset: 0
     - _WHeight: 0.575
