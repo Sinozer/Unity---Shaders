@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_9781c4cf4b4845cd98192e72a26e5dbd_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 0bc407057fece104db605879b2b919ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -40,11 +44,15 @@ Material:
     m_Floats:
     - _Alpha: 0
     - _Elite: 0
-    - _Power: 2.5
+    - _Power: 2
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _ScrollSpeed: 0.1
     m_Colors:
-    - _Color: {r: 0.5396301, g: 2.11167, b: 4.237095, a: 0}
+    - _Color: {r: 0.38157612, g: 1.4931762, b: 2.9960785, a: 0}
+    - _NoiseColor: {r: 0.3372549, g: 0.4431373, b: 0.6705883, a: 1}
+    - _Scroll: {r: 0, g: 5, b: 0, a: 0}
+    - _ScrollSpeed: {r: 0, g: 0.15, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7697208123010622932
 MonoBehaviour:
