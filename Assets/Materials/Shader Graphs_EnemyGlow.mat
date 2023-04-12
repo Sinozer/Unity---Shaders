@@ -39,12 +39,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 0
-    - _Elite: 1
-    - _Power: 2.4
+    - _Elite: 0
+    - _Power: 2.5
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0.5046278, g: 1.9747009, b: 3.9622638, a: 0}
+    - _Color: {r: 0.5396301, g: 2.11167, b: 4.237095, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7697208123010622932
 MonoBehaviour:
