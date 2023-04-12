@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Lambert_DirLight
-  m_Shader: {fileID: 4800000, guid: 3c44daf14e05cd04b870395250a595a9, type: 3}
+  m_Shader: {fileID: 4800000, guid: 69844631e34709c4f813884034369c5f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

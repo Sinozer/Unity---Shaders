@@ -14,7 +14,6 @@ public class Spell3 : SpellBehaviour
         if (!base.Use()) return false;
 
         // Do your things
-        Debug.LogWarning("Spell 3");
 
         return true;
     }

@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - CinemachineTarget
+  - Enemy
+  - Spell
   - Bullet
   layers:
   - Default
@@ -14,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Shield
+  - Entity
   - 
   - 
   - 

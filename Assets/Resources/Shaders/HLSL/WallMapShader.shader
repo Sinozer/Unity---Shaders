@@ -52,10 +52,10 @@ Shader "Learning/Unlit/WallMapShader"
 
                 float4 color = tex2D(Noise, input.uv + disturbedOffset);
                 float4 colorSend = {0,0,color.b,1};
-                /*if (colorSend.b < 0.1) discard;*/
+
+                
                 return colorSend;
             }
-			
             ENDHLSL
         }
     }

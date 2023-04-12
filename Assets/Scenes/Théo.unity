@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 111609981}
   - component: {fileID: 111609980}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerArmature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272340571}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22dea3675fb54ba458f714a568bf1443, type: 3}
   m_Name: 
@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 1557838905}
   - component: {fileID: 1557838904}
   - component: {fileID: 1557838906}
+  - component: {fileID: 1557838907}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -417,7 +418,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.8301887, g: 0.06657174, b: 0.19830705, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -506,6 +507,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &1557838907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557838903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a92f818e2c62074dabc675ce3cbbf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9178140344524050077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -573,6 +586,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spells
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419264760466020803, guid: 4f12e9b96339fe74ca1ac8cd45c299f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
