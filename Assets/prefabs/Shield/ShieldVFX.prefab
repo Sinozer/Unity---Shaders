@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8353593472627568092}
   - component: {fileID: 5166967915338362745}
   - component: {fileID: -1313689900811791919}
-  - component: {fileID: 5161384153966746351}
-  m_Layer: 0
+  - component: {fileID: 3162727790573315220}
+  m_Layer: 9
   m_Name: ShieldVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5161384153966746351
+--- !u!114 &3162727790573315220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +174,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2975992520057885851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab64990265930574bb358aeae73393ad, type: 3}
+  m_Script: {fileID: 11500000, guid: fe0a4ecbc5bdb954588a6e2e0c040a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldRipples: {fileID: 0}
