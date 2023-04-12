@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
   - CinemachineTarget
+  - Enemy
+  - Spell
+  - Bullet
   layers:
   - Default
   - TransparentFX
