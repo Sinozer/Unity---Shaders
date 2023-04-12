@@ -30,5 +30,7 @@ public class GameMan : MonoBehaviour {
 
 	public void ReloadGame() {
 		SceneManager.LoadScene(0);
+		_canvas = GameObject.Find("Canvas");
+		_canvas.SetActive(false);
 	}
 }

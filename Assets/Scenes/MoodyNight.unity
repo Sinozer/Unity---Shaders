@@ -2660,6 +2660,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2289651307240859526, guid: ed3fa237978f6b54f88ba0292dce66e0,
+        type: 3}
+      propertyPath: cursorLocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289651307240859526, guid: ed3fa237978f6b54f88ba0292dce66e0,
+        type: 3}
+      propertyPath: cursorInputForLook
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3352968981355603028, guid: ed3fa237978f6b54f88ba0292dce66e0,
         type: 3}
       propertyPath: m_UIInputModule
