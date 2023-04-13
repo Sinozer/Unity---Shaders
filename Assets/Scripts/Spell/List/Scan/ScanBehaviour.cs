@@ -12,8 +12,7 @@ public class ScanBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Make something else than destroy the object
         if (collision.gameObject.layer == 10)
-            Destroy(collision.gameObject);
+            collision.transform.GetComponent<EnemyBehaviour>().SetState(EnemyBehaviour.EnemyState.FROZEN);
     }
 }
