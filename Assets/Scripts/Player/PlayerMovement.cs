@@ -212,7 +212,7 @@ namespace Player {
 			if(!_inputs.mouseClick) return;
 			Ray cameraRay = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
-			if (Physics.Raycast(cameraRay, out RaycastHit hitInfo) && hitInfo.collider) {
+			if (Physics.Raycast(cameraRay, out RaycastHit hitInfo) && hitInfo.collider.CompareTag("Terrain")) {
 				if (_coroutine != null) StopCoroutine(_coroutine);
 				_coroutine = StartCoroutine(PlayerMoveTowards(hitInfo.point));
 				_targetPos = hitInfo.point;
