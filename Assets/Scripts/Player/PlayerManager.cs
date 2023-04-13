@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour
         _levels._currentXp = 0;
         _levels._xpToNextLvl = 1 * 10;
 
-        BloodGauge = 100;
+        BloodGauge = 0;
     }
 
     // Update is called once per frame
