@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     private Levels _levels;
 
     public int CurrentHealth;
+    public bool IsInvisible;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         CurrentHealth = maxHealth;
+        IsInvisible = false;
         _levels._currentLevel = 1;
         _levels._currentXp = 0;
         _levels._xpToNextLvl = 1 * 10;
