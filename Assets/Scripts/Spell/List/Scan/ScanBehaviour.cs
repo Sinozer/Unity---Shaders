@@ -10,9 +10,13 @@ public class ScanBehaviour : MonoBehaviour
         transform.localScale = new Vector3(transform.localScale.x + step, transform.localScale.y + step, transform.localScale.z + step);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.layer == 10)
-            collision.transform.GetComponent<EnemyBehaviour>().SetState(EnemyBehaviour.EnemyState.FROZEN);
+        Debug.LogWarning("Collision");
+        if (other.gameObject.layer == 10)
+        {
+            Debug.LogWarning("ENTITY");
+            other.transform.GetComponent<EnemyBehaviour>().SetState(EnemyBehaviour.EnemyState.FROZEN);
+        }
     }
 }
