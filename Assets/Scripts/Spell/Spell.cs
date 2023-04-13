@@ -35,6 +35,9 @@ public class Spell : ScriptableObject
     public float Range { get => _range; }
     [SerializeField] private float _range = 10f;
 
+    public int Blood { get => _blood; }
+    [SerializeField] private int _blood = 0;
+
     [SerializeField] private List<SGameObject> _gameObjects = new();
     public Dictionary<string, GameObject> GameObjects = new();
 

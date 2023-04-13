@@ -16,6 +16,9 @@ MonoBehaviour:
   _name: Invisibility
   _description: Default Description
   _cooldown: 15
+  _lastDuration: 5
   _damage: 0
   _range: 0
+  _blood: 100
+  _gameObjects: []
   _key: 120

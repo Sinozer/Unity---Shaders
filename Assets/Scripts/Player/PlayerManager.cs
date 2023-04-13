@@ -3,7 +3,11 @@ using UnityEngine;
 
 namespace Player {
 	public class PlayerManager : MonoBehaviour {
-		[SerializeField] private int maxHealth;
+        public static PlayerManager Instance;
+
+        [SerializeField] private int maxHealth;
+
+		public int BloodGauge { get; set; }
 
 		struct Levels {
 			public int _currentLevel;
@@ -14,9 +18,20 @@ namespace Player {
 		private Levels _levels;
 
 		private int _currentHealth;
-	
-		// Start is called before the first frame update
-		void Start() {
+
+        private void Awake()
+        {
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        // Start is called before the first frame update
+        void Start() {
 			_currentHealth = maxHealth;
 			_levels._currentLevel = 1;
 			_levels._currentXp = 0;
