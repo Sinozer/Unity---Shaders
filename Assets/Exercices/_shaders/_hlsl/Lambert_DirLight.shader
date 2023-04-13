@@ -22,13 +22,14 @@ Shader "Learning/Lit/Lambert_DirLight"
 			struct vertexInput
 			{
 				float4 vertex : POSITION;
-				float3 normal : NORMAL;
+				float3 normal : NORMAl;
 			};
 
 			struct v2f
 			{
 				float4 vertex : SV_POSITION;
-				float3 normalWS : TEXTCOORD0;
+				float3 normalWS : TEXCOORD0;
+				// normal en world space
 			};
 
 			v2f vert(vertexInput v)
@@ -36,8 +37,8 @@ Shader "Learning/Lit/Lambert_DirLight"
 				v2f o;
 
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.normalWS = mul(unity_ObjectToWorld, v.normal);
-				
+				o.normalWS = normalize(mul(unity_ObjectToWorld, float4(v.normal,0).xyz));
+				// To do
 				return o;
 			}
 
@@ -45,18 +46,12 @@ Shader "Learning/Lit/Lambert_DirLight"
 			{
 				// To do => NdotL
 				// N & L dans le même espace et normalisés
-				i.normalWS = normalize(i.normalWS);
-				_WorldSpaceLightDir.xyz = normalize(_WorldSpaceLightDir.xyz);
-				
+				float3 N = normalize(i.normalWS);
+				float3 L = normalize(_WorldSpaceLightDir);
 				// L => direction reçue depuis le script C#. Forward de la DirLight
 				// A inverser car côté shader, le vecteur de la lumière part depuis le fragment
-				float3 L = -_WorldSpaceLightDir.xyz;
-				
 				// dot retourne des valeurs entre -1 et 1, => clamp à utiliser
-				const float NdotL = dot(i.normalWS, L);
-				const float clampedDot = clamp(NdotL, 0.2, 1);
-				
-				return clampedDot;
+				return clamp(dot(N, 1 - L),0.2,1);
 			}
 			
             ENDHLSL
