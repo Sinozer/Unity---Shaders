@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
-  CurrentHealth: 0
+  healthScreenEffectVol: {fileID: 0}
   IsInvisible: 0
 --- !u!1 &994749167 stripped
 GameObject:
@@ -2002,8 +2002,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.05490196, g: 0.14509805, b: 0.29411766, a: 1}
-  m_Intensity: 10
+  m_Color: {r: 0.08235294, g: 0, b: 1, a: 1}
+  m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2261,6 +2261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3084f88722f72f1439a001f0a33a0544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerSpeed: 2
+  _sprintSpeed: 5.335
   landingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
   footstepAudioClips: []
   footstepAudioVolume: 0.5
