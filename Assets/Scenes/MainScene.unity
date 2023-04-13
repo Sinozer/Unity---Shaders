@@ -1517,9 +1517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908f07ebfc3018d4a822a33c7449af64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsInvisible: 0
   maxHealth: 200
   healthScreenEffectVol: {fileID: 1920357304}
-  IsInvisible: 0
 --- !u!1 &994749167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6419264760466020803, guid: 4f12e9b96339fe74ca1ac8cd45c299f0,
@@ -3056,6 +3056,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 833314948079262445, guid: c74df0ef5e333934a91dd2eec3b52865,
+        type: 3}
+      propertyPath: mats.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 833314948079262445, guid: c74df0ef5e333934a91dd2eec3b52865,
+        type: 3}
+      propertyPath: meshDestroyDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 833314948079262445, guid: c74df0ef5e333934a91dd2eec3b52865,
+        type: 3}
+      propertyPath: mats.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 64aa8c2134d9931468cfe6441ef0e158,
+        type: 3}
     - target: {fileID: 3443674600671769529, guid: c74df0ef5e333934a91dd2eec3b52865,
         type: 3}
       propertyPath: _spellsHolder
