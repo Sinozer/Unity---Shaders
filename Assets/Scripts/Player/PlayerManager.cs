@@ -31,7 +31,7 @@ namespace Player {
 		}
 
 		private void OnTriggerEnter(Collider other) {
-			//Debug.Log("Col");
+			Debug.Log("Col");
 		
 			if (other.gameObject.CompareTag("Enemy")) {
 				_currentHealth -= 10;

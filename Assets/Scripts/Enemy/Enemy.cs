@@ -13,14 +13,14 @@ namespace Enemy {
         private void Start() {
             _currentHealth = 10;
             _agent = GetComponent<NavMeshAgent>();
-            player = GameObject.Find("PlayerCorps").transform;
+            player = GameObject.Find("PlayerArmature").transform;
 
             //InvisibilitySpell.OnInvisibility += SetInvisiblity;
         }
 
         private void Update() {
             if (!_isInvisible) {
-               // _agent.SetDestination(player.position);
+                _agent.SetDestination(player.position);
             }
 
             if (_currentHealth <= 0) {
