@@ -12,7 +12,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private Material _material;
 
-    private float _dieTimer = 3f;
+    private float _dieTimer = 2f;
     private readonly float _frozenTimerRef = 3f;
     private float _frozenTimer = 3f;
 
@@ -110,17 +110,16 @@ public class EnemyBehaviour : MonoBehaviour
         if (_currentHealth <= 0f)
             SetState(EnemyState.DIE);
 
-        if (PlayerManager.Instance.IsInvisible)
-            SetState(EnemyState.IDLE);
-        else if (!PlayerManager.Instance.IsInvisible)
-            SetState(EnemyState.CHASING);
-
         switch (State)
         {
             case EnemyState.IDLE:
+
+                CheckInvisibility();
+
                 break;
             case EnemyState.CHASING:
-                _agent.SetDestination(player.position);
+                if (!CheckInvisibility())
+                    _agent.SetDestination(player.position);
                 break;
             case EnemyState.FROZEN:
                 _frozenTimer -= Time.deltaTime;
@@ -131,12 +130,23 @@ public class EnemyBehaviour : MonoBehaviour
             case EnemyState.DIE:
                 _dieTimer -= Time.deltaTime;
 
-                _mesh.material.SetFloat("_Dissolve_Amount", (3f - _dieTimer) / 3f);
+                _mesh.material.SetFloat("_Dissolve_Amount", (2f - _dieTimer) / 2f);
 
                 if (_dieTimer <= 0f)
                     Destroy(gameObject);
                 break;
         }
+    }
+
+    private bool CheckInvisibility()
+    {
+        if (PlayerManager.Instance.IsInvisible)
+        {
+            SetState(EnemyState.IDLE);
+            return true;
+        }
+        SetState(EnemyState.CHASING);
+        return false;
     }
 
     private void OnCollisionEnter(Collision other)
