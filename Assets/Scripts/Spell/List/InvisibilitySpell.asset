@@ -19,6 +19,6 @@ MonoBehaviour:
   _lastDuration: 5
   _damage: 0
   _range: 0
-  _blood: 100
+  _blood: 20
   _gameObjects: []
   _key: 120

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance;
     [SerializeField] private int maxHealth;
     public int BloodGauge { get; set; }
 
@@ -35,6 +36,8 @@ public class PlayerManager : MonoBehaviour
         _levels._currentLevel = 1;
         _levels._currentXp = 0;
         _levels._xpToNextLvl = 1 * 10;
+
+        BloodGauge = 100;
     }
 
     // Update is called once per frame
