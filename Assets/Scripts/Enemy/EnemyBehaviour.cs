@@ -36,6 +36,8 @@ public class EnemyBehaviour : MonoBehaviour
         switch (State)
         {
             case EnemyState.IDLE:
+                _agent.enabled = false;
+                _animator.enabled = false;
                 break;
             case EnemyState.CHASING:
                 _agent.enabled = true;
@@ -76,7 +78,6 @@ public class EnemyBehaviour : MonoBehaviour
     public Transform player;
 
     private NavMeshAgent _agent;
-    private bool _isInvisible;
     public bool IsElite { get => _isElite; }
     private bool _isElite;
     private int _currentHealth;
@@ -86,8 +87,6 @@ public class EnemyBehaviour : MonoBehaviour
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("PlayerArmature").transform;
-
-        //InvisibilitySpell.OnInvisibility += SetInvisiblity;
 
         int random = UnityEngine.Random.Range(1, 100);
         _isElite = random <= 5;
@@ -103,6 +102,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (_currentHealth <= 0f)
             SetState(EnemyState.DIE);
+
+        if (PlayerManager.Instance.IsInvisible)
+            SetState(EnemyState.IDLE);
+        else if (!PlayerManager.Instance.IsInvisible)
+            SetState(EnemyState.CHASING);
 
         switch (State)
         {
@@ -126,18 +130,6 @@ public class EnemyBehaviour : MonoBehaviour
                     Destroy(gameObject);
                 break;
         }
-
-        // TODO Rajouter le state pour invisible
-
-        //if (!_isInvisible)
-        //{
-        //    _agent.SetDestination(player.position);
-        //}
-    }
-
-    private void SetInvisiblity(bool value)
-    {
-        _isInvisible = value;
     }
 
     private void OnCollisionEnter(Collision other)

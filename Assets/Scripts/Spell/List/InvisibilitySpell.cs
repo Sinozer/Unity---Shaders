@@ -1,36 +1,35 @@
-using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InvisibilitySpell : SpellBehaviour
 {
-    public static event Action<bool> OnInvisibility;
+    [SerializeField] private Material _invisibilityMaterial;
 
     private SkinnedMeshRenderer _mesh;
-    [SerializeField] private Material _invisibilityMaterial;
+    private List<Material> _mats;
 
     private void Start()
     {
         _mesh = Player.GetComponentInChildren<SkinnedMeshRenderer>();
+        _mats = _mesh.materials.ToList();
+    }
+
+    private void OnDestroy()
+    {
+        PlayerManager.Instance.IsInvisible = false;
+        _mats.RemoveAt(_mats.Count - 1);
+        _mesh.materials = _mats.ToArray();
     }
 
     public override bool Use()
     {
         if (!base.Use()) return false;
 
-        // Do your things
-        OnInvisibility?.Invoke(true);
-
-        Material[] materials = new Material[3];
-
-        for (int i = 0; i < 3; i++)
-        {
-            materials[i] = _invisibilityMaterial;
-        }
-
-        _mesh.materials = materials;
-
-        //After CD
-        //OnInvisibility?.Invoke(false);
+        PlayerManager.Instance.IsInvisible = true;
+        _mats.Add(_invisibilityMaterial);
+        _mesh.materials = _mats.ToArray();
+        Destroy(this, SpellRef.LastDuration);
 
         return true;
     }

@@ -15,7 +15,7 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _name: Invisibility
   _description: Default Description
-  _cooldown: 15
+  _cooldown: 1
   _lastDuration: 5
   _damage: 0
   _range: 0
