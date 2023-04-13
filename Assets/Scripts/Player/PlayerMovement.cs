@@ -7,8 +7,8 @@ namespace Player {
 	public class PlayerMovement : MonoBehaviour {
 
 		// player
-		private float _playerSpeed = 2f;
-		private float _sprintSpeed = 5.335f;
+		public float _playerSpeed = 2f;
+		public float _sprintSpeed = 5.335f;
 		private float _rotationSpeed = 3f;
 		private float _rotationSmoothTime = 0.12f;
 		private float _speed, _animationBlend;

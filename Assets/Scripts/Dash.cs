@@ -1,3 +1,4 @@
+using Player;
 using StarterAssets;
 using System;
 using System.Collections;
@@ -9,6 +10,9 @@ public class Dash : MonoBehaviour
     [Header("Input")]
     public KeyCode dashKey = KeyCode.LeftControl;
 
+    [Header("Dash Characteristic")]
+    public float dashSpeed = 15f;
+
     private void Start()
     {
 
@@ -19,12 +23,14 @@ public class Dash : MonoBehaviour
         if (Input.GetKeyDown(dashKey))
             Dashing();
         else
-            GetComponent<ThirdPersonController>().MoveSpeed = 2;
+            GetComponent<PlayerMovement>()._playerSpeed = 2f;
+            GetComponent<PlayerMovement>()._sprintSpeed = 5.335f;
 
     }
 
     private void Dashing()
     {
-        GetComponent<ThirdPersonController>().MoveSpeed = 100;
+        GetComponent<PlayerMovement>()._playerSpeed = dashSpeed;
+        GetComponent<PlayerMovement>()._sprintSpeed = dashSpeed;
     }
 }
