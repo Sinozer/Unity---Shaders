@@ -31,5 +31,6 @@ public class GameMan : MonoBehaviour {
 	public void ReloadGame() {
 		AsyncOperation op = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
 		op.completed += operation => SetCanvas();
+		PlayerManager.Instance.CurrentHealth = PlayerManager.Instance.MaxHealth;
 	}
 }

@@ -20,7 +20,8 @@ public class PlayerManager : MonoBehaviour
     private Levels _levels;
     private Vignette _healthScreenEffectVignette;
 
-    public int CurrentHealth;
+    public int CurrentHealth { get; set; }
+    public int MaxHealth { get => maxHealth; private set => maxHealth = value;}
     public bool IsInvisible;
 
     private void Awake()
