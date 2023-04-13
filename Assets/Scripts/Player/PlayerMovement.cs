@@ -234,6 +234,7 @@ namespace Player {
 				Vector3 movement = direction.normalized * (targetSpeed * Time.deltaTime) +
 				                   new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
 				_characterController.Move(movement);
+				direction.y = 0.0f;
 
 				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction.normalized), _rotationSpeed * Time.deltaTime);
 
