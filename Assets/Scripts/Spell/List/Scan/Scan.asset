@@ -15,10 +15,11 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _name: 2
   _description: Default Description
-  _cooldown: 2
+  _cooldown: 5
   _lastDuration: 5
   _damage: 20
   _range: 10
+  _blood: 0
   _gameObjects:
   - key: Vfx
     value: {fileID: 542789656469643734, guid: 81df27a133bb60f4abcb3ddf582a7787, type: 3}

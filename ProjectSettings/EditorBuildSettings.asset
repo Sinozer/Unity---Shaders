@@ -5,15 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/MoodyNight.unity
-    guid: c79d376df6ec040468482d434d11eaf2
-  - enabled: 0
-    path: Assets/Scenes/Thomas.unity
-    guid: 6990f51af0dbbaa429e7ff90ac86b4d9
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 5e21252f7c71e69439468d0f8eb4efba
