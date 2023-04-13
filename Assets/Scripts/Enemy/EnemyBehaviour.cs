@@ -100,6 +100,11 @@ public class EnemyBehaviour : MonoBehaviour
         UpdateState();
     }
 
+    private void OnDestroy()
+    {
+        PlayerManager.Instance.BloodGauge += 5;
+    }
+
     private void Update()
     {
         if (_currentHealth <= 0f)

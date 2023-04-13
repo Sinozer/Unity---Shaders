@@ -16,6 +16,7 @@ public class BloodGauge : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(_gauge);
         _gauge = PlayerManager.Instance.BloodGauge;
         _gauge = _gauge >= 0 && _gauge <= 100 ? _gauge : (int)_slider.value;
         _isActive = _gauge > 0;
