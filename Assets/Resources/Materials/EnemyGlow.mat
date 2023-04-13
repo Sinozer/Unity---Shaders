@@ -59,11 +59,13 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ScrollSpeed: 0.1
+    - _Targeted: 0
     m_Colors:
     - _Color: {r: 0.26981506, g: 1.055835, b: 2.1185474, a: 0}
     - _NoiseColor: {r: 0.3372549, g: 0.4431373, b: 0.6705883, a: 1}
     - _Scroll: {r: 0, g: 5, b: 0, a: 0}
     - _ScrollSpeed: {r: 0, g: 0.15, b: 0, a: 0}
+    - _TargetColor: {r: 0.47672874, g: 0.11747955, b: 2.264151, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7697208123010622932
 MonoBehaviour:

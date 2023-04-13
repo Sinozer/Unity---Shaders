@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CrysalShaderGraph
+  m_Name: BulletShader
   m_Shader: {fileID: -6465566751694194690, guid: 5e71378f290b51e42b2e5cf29f2c9064,
     type: 3}
   m_Parent: {fileID: 0}
@@ -42,17 +42,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BotLine: 0.36
+    - _BotLine: 0.4
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Topline: 0.6
-    - _metalic: 0
-    - _smoothness: 0
+    - _Topline: 0.4
+    - _metalic: 1
+    - _smoothness: 1
     m_Colors:
-    - _BottomColor: {r: 4, g: 4, b: 4, a: 1}
+    - _BottomColor: {r: 5.9921575, g: 5.9921575, b: 5.9921575, a: 1}
     - _Color: {r: 11.25054, g: 14.49057, b: 1.57209, a: 0}
-    - _CristalColor: {r: 4, g: 0, b: 0, a: 0}
-    - _TopColor: {r: 4, g: 4, b: 4, a: 1}
+    - _CristalColor: {r: 5.9921575, g: 0, b: 0, a: 1}
+    - _TopColor: {r: 5.9921575, g: 5.9921575, b: 5.9921575, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2128033633779234563
 MonoBehaviour:

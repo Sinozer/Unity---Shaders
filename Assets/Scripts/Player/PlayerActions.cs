@@ -51,6 +51,7 @@ namespace Player {
 						//Debug.Log("Target");
 						_target = hitInfo.collider.gameObject;
 						//TODO : set une variable aux enemis pour qu'ils sachent s'ils sont target, afin de changer leur shader
+						_target.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetFloat("_Targeted",5f);
 					}
 				}
 			}
