@@ -6,20 +6,29 @@ public class InvisibilitySpell : SpellBehaviour
 {
     [SerializeField] private Material _invisibilityMaterial;
 
-    private SkinnedMeshRenderer _mesh;
-    private List<Material> _mats;
+    private MeshRenderer[] _mesh;
+    private List<Material>[] _mats;
 
     private void Start()
     {
-        _mesh = Player.GetComponentInChildren<SkinnedMeshRenderer>();
-        _mats = _mesh.materials.ToList();
+        _mesh = Player.GetComponentsInChildren<MeshRenderer>();
+        _mats = new List<Material>[_mesh.Length];
+
+        for (int i = 0; i < _mesh.Length; i++)
+        {
+            _mats[i] = _mesh[i].materials.ToList();
+        }
     }
 
     private void OnDestroy()
     {
         PlayerManager.Instance.IsInvisible = false;
-        _mats.RemoveAt(_mats.Count - 1);
-        _mesh.materials = _mats.ToArray();
+
+        for (int i = 0; i < _mesh.Length; i++)
+        {
+            _mats[i].RemoveAt(_mats[i].Count - 1);
+            _mesh[i].materials = _mats[i].ToArray();
+        }
     }
 
     public override bool Use()
@@ -27,8 +36,13 @@ public class InvisibilitySpell : SpellBehaviour
         if (!base.Use()) return false;
 
         PlayerManager.Instance.IsInvisible = true;
-        _mats.Add(_invisibilityMaterial);
-        _mesh.materials = _mats.ToArray();
+
+        for (int i = 0; i < _mesh.Length; i++)
+        {
+            _mats[i].Add(_invisibilityMaterial);
+            _mesh[i].materials = _mats[i].ToArray();
+        }
+
         Destroy(this, SpellRef.LastDuration);
 
         return true;
