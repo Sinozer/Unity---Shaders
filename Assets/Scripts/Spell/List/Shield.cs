@@ -15,7 +15,6 @@ public class Shield : SpellBehaviour
         if (!base.Use()) return false;
 
         // Do your things
-        Debug.LogWarning("Shield");
         GameObject vfx = Instantiate(SpellRef.GameObjects["Vfx"], Player.transform);
         vfx.GetComponent<VisualEffect>().SetFloat("LifeTime", SpellRef.LastDuration);
         Destroy(vfx, SpellRef.LastDuration);

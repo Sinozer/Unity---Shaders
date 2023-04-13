@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Exercices/_mat/ToonLighting.mat.meta
+guid: 006faee1d61d3e847b83cdb01fc56910
+========
+guid: b8a68810110ab3b4cb7ed65c5fa1acec
+>>>>>>>> main:Assets/Exercices/_mat/Fresnel.mat.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -35,6 +35,9 @@ public class Spell : ScriptableObject
     public float Range { get => _range; }
     [SerializeField] private float _range = 10f;
 
+    public int Blood { get => _blood; }
+    [SerializeField] private int _blood = 0;
+
     [SerializeField] private List<SGameObject> _gameObjects = new();
     public Dictionary<string, GameObject> GameObjects = new();
 
@@ -44,7 +47,6 @@ public class Spell : ScriptableObject
 
     public void Init()
     {
-        Debug.Log("Init Spell" + Name);
         foreach (var gameObject in _gameObjects)
             GameObjects[gameObject.key] = gameObject.value;
     }
