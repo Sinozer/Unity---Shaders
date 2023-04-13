@@ -43,16 +43,40 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2DLOD_2532968940a946f286d367c655347949_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a8d0d065a8e1c424491eee190f45e4d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_ab1a445e1bb24a4ca276218fc8d2c1a3_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a8d0d065a8e1c424491eee190f45e4d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_1a4e41d27b234476a1144867f677b384_Texture_1:
         m_Texture: {fileID: 2800000, guid: a8d0d065a8e1c424491eee190f45e4d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_315d5e12bf274380aada7f9d0c8c2f3f_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 6aaee87d516ce3a45826c7fccbad93b7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_4400dadd964a4215a867ec649e31b48b_Texture_1:
         m_Texture: {fileID: 2800000, guid: a8d0d065a8e1c424491eee190f45e4d6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_68d0f0ee5c3341dfb86fb073cfe21755_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a1722831ba12140418011bcfd60bd82f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_839e4f00605f4f2a947d8c325d4075cb_Texture_1:
         m_Texture: {fileID: 2800000, guid: a8d0d065a8e1c424491eee190f45e4d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8713e603fe0a4254b93636fe04a08216_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a1722831ba12140418011bcfd60bd82f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_94b4bcc953b34cb7a5a7a89a4460f485_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 8d8b01498767b6b4e9f9deadc6e4ad22, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_a9e785ab31874fbc87c95f501dc89fce_Texture_1:
