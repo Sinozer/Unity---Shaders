@@ -1,23 +1,34 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
     private Animator _animator;
+    [SerializeField] private Material _dissolveMaterial;
     [SerializeField] private Material _frozenMaterial;
+
+    private Material _material;
+
+    private float _dieTimer = 3f;
+    private readonly float _frozenTimerRef = 3f;
+    private float _frozenTimer = 3f;
 
     public enum EnemyState
     {
         IDLE,
         CHASING,
-        FROZEN
+        FROZEN,
+        DIE
     }
     public EnemyState State { get => _state; }
-    private EnemyState _state = EnemyState.IDLE;
-    
+    private EnemyState _state = EnemyState.CHASING;
+
     public void SetState(EnemyState state)
     {
+        if (_state == state) return;
         _state = state;
         UpdateState();
     }
@@ -31,19 +42,41 @@ public class EnemyBehaviour : MonoBehaviour
             case EnemyState.CHASING:
                 _agent.enabled = true;
                 _animator.enabled = true;
-                _mesh.materials[2] = null;
+
+                if (_mesh.materials.Length < 3) break;
+
+                List<Material> temp = _mesh.materials.ToList();
+                temp.RemoveAt(temp.Count - 1);
+                _mesh.materials = temp.ToArray();
+
                 break;
             case EnemyState.FROZEN:
                 _agent.enabled = false;
                 _animator.enabled = false;
-                _mesh.materials[2] = _frozenMaterial;
+
+                List<Material> mats = _mesh.materials.ToList();
+                mats.Add(_frozenMaterial);
+                _mesh.materials = mats.ToArray();
+
+                _frozenTimer = _frozenTimerRef;
+                break;
+            case EnemyState.DIE:
+                _agent.enabled = false;
+                _animator.enabled = false;
+                GetComponent<CapsuleCollider>().enabled = false;
+
+                List<Material> tempDie = new()
+                {
+                    _dissolveMaterial
+                };
+                _mesh.materials = tempDie.ToArray();
                 break;
         }
     }
 
     [SerializeField] private SkinnedMeshRenderer _mesh;
     public Transform player;
-    
+
     private NavMeshAgent _agent;
     private bool _isInvisible;
     public bool IsElite { get => _isElite; }
@@ -64,10 +97,15 @@ public class EnemyBehaviour : MonoBehaviour
         _mesh.materials[1].SetInteger("_Elite", Convert.ToInt32(_isElite));
 
         _currentHealth = _isElite ? 20 : 10;
+
+        UpdateState();
     }
 
     private void Update()
     {
+        if (_currentHealth <= 0f)
+            SetState(EnemyState.DIE);
+
         switch (State)
         {
             case EnemyState.IDLE:
@@ -76,6 +114,18 @@ public class EnemyBehaviour : MonoBehaviour
                 _agent.SetDestination(player.position);
                 break;
             case EnemyState.FROZEN:
+                _frozenTimer -= Time.deltaTime;
+
+                if (_frozenTimer <= 0f)
+                    SetState(EnemyState.CHASING);
+                break;
+            case EnemyState.DIE:
+                _dieTimer -= Time.deltaTime;
+
+                _mesh.material.SetFloat("_Dissolve_Amount", (3f - _dieTimer) / 3f);
+
+                if (_dieTimer <= 0f)
+                    Destroy(gameObject);
                 break;
         }
 
