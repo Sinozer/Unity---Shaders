@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
 
     private Levels _levels;
 
-    private int _currentHealth;
+    public int CurrentHealth;
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
         _levels._currentLevel = 1;
         _levels._currentXp = 0;
         _levels._xpToNextLvl = 1 * 10;
@@ -43,23 +43,10 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Debug.Log("Dead");
             GameMan.Instance.EndGame();
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Col");
-
-
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("HIT");
-            bool isElite = collision.transform.GetComponent<EnemyBehaviour>().IsElite;
-            _currentHealth -= isElite ? 20 : 10;
         }
     }
 }

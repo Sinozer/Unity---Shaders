@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Spell
   - Bullet
+  - Terrain
   layers:
   - Default
   - TransparentFX
