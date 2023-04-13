@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private Material _dissolveMaterial;
     [SerializeField] private Material _frozenMaterial;
 
+    private Material _material;
+
     private float _dieTimer = 3f;
     private readonly float _frozenTimerRef = 3f;
     private float _frozenTimer = 3f;

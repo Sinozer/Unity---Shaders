@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public class DamageFlash : MonoBehaviour {
-    [SerializeField] private Color flashColor = Color.white;
+    //[SerializeField] private Color flashColor = ;
     [SerializeField] private float _flashTime = 0.25f;
 
     private Material _material;
@@ -18,7 +18,7 @@ public class DamageFlash : MonoBehaviour {
     }
 
     private IEnumerator DamageFlasher() {
-        _material.SetColor("_FlashColor",flashColor);
+        //_material.SetColor("_FlashColor",flashColor);
 
         float currentFlashAmount, elapsedTime = 0f;
         

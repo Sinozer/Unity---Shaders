@@ -4,8 +4,6 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
     [SerializeField] private int maxHealth;
-
-    private DamageFlash _damageFlash;
     public int BloodGauge { get; set; }
 
     struct Levels
@@ -39,8 +37,6 @@ public class PlayerManager : MonoBehaviour
         _levels._xpToNextLvl = 1 * 10;
 
         BloodGauge = 100;
-
-        _damageFlash = GameObject.FindWithTag("PlayerBody").GetComponent<DamageFlash>();
     }
 
     // Update is called once per frame

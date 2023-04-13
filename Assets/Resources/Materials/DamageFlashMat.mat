@@ -56,5 +56,5 @@ Material:
     - _QueueOffset: 0
     m_Colors:
     - _BaseColor: {r: 0.01526345, g: 0.06559972, b: 0.4622642, a: 1}
-    - _FlashColor: {r: 11.984313, g: 0.8479466, b: 0.8479466, a: 1}
+    - _FlashColor: {r: 7.5471697, g: 1.9579923, b: 1.9579923, a: 1}
   m_BuildTextureStacks: []
