@@ -45,6 +45,7 @@ public class PlayerManager : MonoBehaviour
 
         BloodGauge = 100;
         healthScreenEffectVol.profile.TryGet(out _healthScreenEffectVignette);
+
     }
 
     private void Update()
