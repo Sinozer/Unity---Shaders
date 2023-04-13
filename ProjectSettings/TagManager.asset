@@ -12,10 +12,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Bullet
   - Scan
   - Player
   - Shield

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,12 +11,15 @@ public class GameMan : MonoBehaviour {
 			Destroy(gameObject);
 			return;
 		}
-
 		Instance = this;
 		DontDestroyOnLoad(gameObject);
 	}
 
 	private void Start() {
+		SetCanvas();
+	}
+
+	private void SetCanvas() {
 		_canvas = GameObject.Find("Canvas");
 		_canvas.SetActive(false);
 	}
@@ -29,8 +29,7 @@ public class GameMan : MonoBehaviour {
 	}
 
 	public void ReloadGame() {
-		SceneManager.LoadScene(0);
-		_canvas = GameObject.Find("Canvas");
-		_canvas.SetActive(false);
+		AsyncOperation op = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+		op.completed += operation => SetCanvas();
 	}
 }
