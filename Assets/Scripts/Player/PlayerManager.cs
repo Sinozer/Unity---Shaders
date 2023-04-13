@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
     [SerializeField] private int maxHealth;
+    [SerializeField] private Volume healthScreenEffectVol;
     public int BloodGauge { get; set; }
 
     struct Levels
@@ -14,8 +18,10 @@ public class PlayerManager : MonoBehaviour
     }
 
     private Levels _levels;
+    private Vignette _healthScreenEffectVignette;
 
-    public int CurrentHealth;
+    public int CurrentHealth { get; set; }
+    public int MaxHealth { get => maxHealth; private set => maxHealth = value;}
     public bool IsInvisible;
 
     private void Awake()
@@ -29,8 +35,7 @@ public class PlayerManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         CurrentHealth = maxHealth;
         IsInvisible = false;
@@ -38,16 +43,23 @@ public class PlayerManager : MonoBehaviour
         _levels._currentXp = 0;
         _levels._xpToNextLvl = 1 * 10;
 
-        BloodGauge = 0;
+        BloodGauge = 100;
+        healthScreenEffectVol.profile.TryGet(out _healthScreenEffectVignette);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (CurrentHealth <= 0)
-        {
-            Debug.Log("Dead");
-            GameMan.Instance.EndGame();
-        }
+        float healthPercentage = (float) CurrentHealth / maxHealth;
+        UpdateScreenEffect(healthPercentage);
+
+        if (CurrentHealth > 0) return;
+        Debug.Log("Dead");
+        GameMan.Instance.EndGame();
+    }
+    
+    private void UpdateScreenEffect(float healthPercentage)
+    {
+        _healthScreenEffectVignette.intensity.value = 1 - healthPercentage;
     }
 }
