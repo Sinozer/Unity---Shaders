@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Player {
@@ -32,9 +33,10 @@ namespace Player {
 
 		private void OnTriggerEnter(Collider other) {
 			//Debug.Log("Col");
+			bool isElite = Convert.ToBoolean(other.GetComponent<Renderer>().materials[1].GetInteger("_Elite"));
 		
 			if (other.gameObject.CompareTag("Enemy")) {
-				_currentHealth -= 10;
+				_currentHealth -= isElite ? 20 : 10;
 			}
 		}
 	}

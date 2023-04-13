@@ -14,7 +14,6 @@ namespace Enemy {
         private int _currentHealth;
 
         private void Start() {
-            _currentHealth = 10;
             _agent = GetComponent<NavMeshAgent>();
             player = GameObject.Find("PlayerArmature").transform;
 
@@ -24,6 +23,8 @@ namespace Enemy {
             _isElite = random <= 5;
 
             _mesh.materials[1].SetInteger("_Elite", Convert.ToInt32(_isElite));
+
+            _currentHealth = _isElite ? 20 : 10;
         }
 
         private void Update() {
