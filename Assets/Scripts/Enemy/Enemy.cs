@@ -1,21 +1,29 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Enemy {
-    public class Enemy : MonoBehaviour {
+    public class Enemy : MonoBehaviour
+    {
+        [SerializeField] private SkinnedMeshRenderer _mesh;
         public Transform player;
 
         private NavMeshAgent _agent;
         private bool _isInvisible;
-
+        private bool _isElite;
         private int _currentHealth;
 
         private void Start() {
             _currentHealth = 10;
             _agent = GetComponent<NavMeshAgent>();
-            player = GameObject.Find("PlayerCorps").transform;
+            player = GameObject.Find("PlayerArmature").transform;
 
             //InvisibilitySpell.OnInvisibility += SetInvisiblity;
+
+            int random = UnityEngine.Random.Range(1, 100);
+            _isElite = random <= 5;
+
+            _mesh.materials[1].SetInteger("_Elite", Convert.ToInt32(_isElite));
         }
 
         private void Update() {
