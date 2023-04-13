@@ -5,7 +5,6 @@ public class BloodGauge : MonoBehaviour
 {
     [Header("Refs")]
     [SerializeField] private Slider _slider;
-    [SerializeField] private GameObject _sliderObject;
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private Animation _animation;
 

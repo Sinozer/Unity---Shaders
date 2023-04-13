@@ -47,10 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 7356213275470788534}
-  _sliderObject: {fileID: 7799617356389372773}
   _particleSystem: {fileID: 7541267766837297628}
   _animation: {fileID: 8205883883327832961}
-  _gauge: 100
+  _gauge: 50
 --- !u!1 &620510060402172560
 GameObject:
   m_ObjectHideFlags: 0

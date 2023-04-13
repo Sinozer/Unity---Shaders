@@ -682,11 +682,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodGauge
       objectReference: {fileID: 0}
-    - target: {fileID: 4562348401134284303, guid: b4e8680daa96e914f96d20324d2879a9,
-        type: 3}
-      propertyPath: _gauge
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 4640002943430523002, guid: b4e8680daa96e914f96d20324d2879a9,
         type: 3}
       propertyPath: m_AnchorMax.y
