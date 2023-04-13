@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ClickToMove",
+                    "name": "Click",
                     "type": "Button",
                     "id": "c9da5eee-cd53-4449-a2ae-eebe21da679c",
                     "expectedControlType": "Button",
@@ -220,11 +220,11 @@
                 {
                     "name": "",
                     "id": "242e4685-8dee-473c-a12c-f775ede7ba7f",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "ClickToMove",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
