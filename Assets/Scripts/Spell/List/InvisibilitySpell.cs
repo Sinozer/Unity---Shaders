@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class InvisibilitySpell : SpellBehaviour
 {
-    [SerializeField] private Material _invisibilityMaterial;
+    [SerializeField] private Material invisibilityMaterial;
 
     private MeshRenderer[] _mesh;
     private List<Material>[] _mats;
@@ -29,7 +30,7 @@ public class InvisibilitySpell : SpellBehaviour
 
         for (int i = 0; i < _mesh.Length; i++)
         {
-            _mats[i].Add(_invisibilityMaterial);
+            _mats[i].Add(invisibilityMaterial);
             _mesh[i].materials = _mats[i].ToArray();
         }
 

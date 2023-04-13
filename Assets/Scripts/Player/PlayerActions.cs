@@ -1,60 +1,59 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Player {
-	public class PlayerActions : MonoBehaviour {
-		public GameObject bullet;
-	
-		private PlayerInputs _inputs;
-		private GameObject _target;
-		private Camera _mainCamera;
-		private Vector3 _offset;
-		
-	
-		// Start is called before the first frame update
-		void Start() {
-			_mainCamera = Camera.main;
-			_inputs = GetComponent<PlayerInputs>();
-			_offset = new Vector3(1, 0, 0);
-		}
+namespace Player
+{
+    public class PlayerActions : MonoBehaviour
+    {
+        public GameObject bullet;
 
-		// Update is called once per frame
-		void Update() {
-			if(_inputs.shoot)
-				Shoot();
-			CheckTarget();
-			_inputs.shoot = false;
-		}
+        private PlayerInputs _inputs;
+        private GameObject _target;
+        private Camera _mainCamera;
+        private Vector3 _offset;
+        private static readonly int Targeted = Shader.PropertyToID("_Targeted");
 
-		private void Shoot() {
-			if (_target == null) {
-				GameObject clone = Instantiate(bullet, transform.position + _offset, Quaternion.identity);
-				//clone.transform.forward = transform.forward;
-				clone.GetComponent<Rigidbody>().velocity += new Vector3(25,0,0);
-			}
-			else {
-				Vector3 dir = (_target.transform.position - transform.position).normalized;
-				
-				GameObject clone = Instantiate(bullet, transform.position + dir, Quaternion.identity);
-				//clone.transform.forward = transform.forward;
-				clone.GetComponent<Rigidbody>().velocity += dir * 25;
-			}
-			
-		}
+        private void Start()
+        {
+            _mainCamera = Camera.main;
+            _inputs = GetComponent<PlayerInputs>();
+            _offset = new Vector3(1, 0, 0);
+        }
 
-		private void CheckTarget() {
-			if (_inputs.targeting) {
-				Ray cameraRay = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+        private void Update()
+        {
+            if (_inputs.shoot)
+                Shoot();
+            CheckTarget();
+            _inputs.shoot = false;
+        }
 
-				if (Physics.Raycast(cameraRay, out RaycastHit hitInfo) && hitInfo.collider) {
-					if (hitInfo.collider.gameObject.CompareTag("Enemy")) {
-						//Debug.Log("Target");
-						_target = hitInfo.collider.gameObject;
-						//TODO : set une variable aux enemis pour qu'ils sachent s'ils sont target, afin de changer leur shader
-						_target.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetFloat("_Targeted",5f);
-					}
-				}
-			}
-		}
-	}
+        private void Shoot()
+        {
+            if (_target == null)
+            {
+                GameObject clone = Instantiate(bullet, transform.position + _offset, Quaternion.identity);
+                clone.GetComponent<Rigidbody>().velocity += new Vector3(25, 0, 0);
+            }
+            else
+            {
+                Transform transform1 = transform;
+                Vector3 position = transform1.position;
+                Vector3 dir = (_target.transform.position - position).normalized;
+                GameObject clone = Instantiate(bullet, position + dir, Quaternion.identity);
+                clone.GetComponent<Rigidbody>().velocity += dir * 25;
+            }
+        }
+
+        private void CheckTarget()
+        {
+            if (!_inputs.targeting) return;
+            Ray cameraRay = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+            if (!Physics.Raycast(cameraRay, out RaycastHit hitInfo) || !hitInfo.collider) return;
+            if (!hitInfo.collider.gameObject.CompareTag("Enemy")) return;
+            _target = hitInfo.collider.gameObject;
+            _target.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].SetFloat(Targeted, 5f);
+        }
+    }
 }

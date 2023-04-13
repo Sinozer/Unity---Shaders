@@ -7,16 +7,16 @@ public class ScanBehaviour : MonoBehaviour
     private void Update()
     {
         float step = _speed * Time.deltaTime;
-        transform.localScale = new Vector3(transform.localScale.x + step, transform.localScale.y + step, transform.localScale.z + step);
+        Vector3 localScale = transform.localScale;
+        
+        localScale = new Vector3(localScale.x + step, localScale.y + step,
+            localScale.z + step);
+        transform.localScale = localScale;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.LogWarning("Collision");
-        if (other.gameObject.layer == 10)
-        {
-            Debug.LogWarning("ENTITY");
-            other.transform.GetComponent<EnemyBehaviour>().SetState(EnemyBehaviour.EnemyState.FROZEN);
-        }
+        if (other.gameObject.layer != 10) return;
+        other.transform.GetComponent<EnemyBehaviour>().SetState(EnemyBehaviour.EnemyState.FROZEN);
     }
 }

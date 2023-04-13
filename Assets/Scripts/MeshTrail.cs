@@ -1,37 +1,29 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MeshTrail : MonoBehaviour
 {
-
     public float activeTime = 0.2f;
 
     public float meshRefreshRate = 0.02f;
     public float meshDestroyDelay = 0.2f;
-
-
-    private bool _isTrailActive;
+    
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public Transform spawnPos;
 
-    public Material[] mat;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public Material[] mats;
 
+    private bool _isTrailActive;
+
+    private void Update()
+    {
+        if (!Input.GetKeyDown(KeyCode.LeftControl) || _isTrailActive) return;
+        _isTrailActive = true;
+        StartCoroutine(ActivateTrail(activeTime));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !_isTrailActive)
-        {
-            _isTrailActive = true;
-            StartCoroutine(ActivateTrail(activeTime));
-        }
-    }
-
-    IEnumerator ActivateTrail(float time)
+    private IEnumerator ActivateTrail(float time)
     {
         while (time > 0)
         {
@@ -51,7 +43,7 @@ public class MeshTrail : MonoBehaviour
             skinnedMeshRenderer.BakeMesh(mesh);
 
             mf.mesh = mesh;
-            mr.materials = mat;
+            mr.materials = mats;
 
 
             Destroy(newObject, meshDestroyDelay);
