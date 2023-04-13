@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Spell
   - Bullet
+  - PlayerBody
   - Terrain
   layers:
   - Default

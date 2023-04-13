@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-593550834228839214
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CrysalShaderGraph
-  m_Shader: {fileID: -6465566751694194690, guid: 5e71378f290b51e42b2e5cf29f2c9064,
+  m_Name: DamageFlashMat
+  m_Shader: {fileID: -6465566751694194690, guid: 9962b5e56049a7b43b0b5ec4f02d2e07,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,10 +37,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 1c3c5b01e25ab5c4ab975d04e1495140, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -42,28 +51,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BotLine: 0.36
+    - _FlashAmount: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Topline: 0.6
-    - _metalic: 0
-    - _smoothness: 0
     m_Colors:
-    - _BottomColor: {r: 4, g: 4, b: 4, a: 1}
-    - _Color: {r: 11.25054, g: 14.49057, b: 1.57209, a: 0}
-    - _CristalColor: {r: 4, g: 0, b: 0, a: 0}
-    - _TopColor: {r: 4, g: 4, b: 4, a: 1}
+    - _BaseColor: {r: 0.01526345, g: 0.06559972, b: 0.4622642, a: 1}
+    - _FlashColor: {r: 7.5471697, g: 1.9579923, b: 1.9579923, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &2128033633779234563
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 7
