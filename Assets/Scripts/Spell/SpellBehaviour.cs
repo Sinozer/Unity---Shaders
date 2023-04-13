@@ -66,8 +66,8 @@ public abstract class SpellBehaviour : MonoBehaviour
     public float Cooldown { get => _cooldown; }
     protected float _cooldown;
 
-    public float Blood { get => _blood; }
-    protected float _blood;
+    public int Blood { get => _blood; }
+    protected int _blood;
 
     private void Awake()
     {
@@ -89,8 +89,15 @@ public abstract class SpellBehaviour : MonoBehaviour
         SetState(SpellState.COOLDOWN);
 
         _blood = SpellRef.Blood;
-        if (_blood > 0 && PlayerManager.Instance.BloodGauge < _blood) return false;
-        Debug.Log(_blood);
+
+        if (_blood > 0 && PlayerManager.Instance.BloodGauge < _blood)
+        {
+            return false;
+        }
+        else
+        {
+            PlayerManager.Instance.BloodGauge -= _blood;
+        }
 
         return true;
     }
