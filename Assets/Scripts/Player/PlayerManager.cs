@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance;
     [SerializeField] private int maxHealth;
+    public int BloodGauge { get; set; }
 
     struct Levels
     {
@@ -16,6 +18,17 @@ public class PlayerManager : MonoBehaviour
 
     private int _currentHealth;
 
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +36,8 @@ public class PlayerManager : MonoBehaviour
         _levels._currentLevel = 1;
         _levels._currentXp = 0;
         _levels._xpToNextLvl = 1 * 10;
+
+        BloodGauge = 100;
     }
 
     // Update is called once per frame

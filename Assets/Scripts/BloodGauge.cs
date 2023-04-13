@@ -16,14 +16,22 @@ public class BloodGauge : MonoBehaviour
 
     private void Update()
     {
+        _gauge = PlayerManager.Instance.BloodGauge;
         _gauge = _gauge >= 0 && _gauge <= 100 ? _gauge : (int)_slider.value;
-        _slider.value = _gauge;
         _isActive = _gauge > 0;
 
         ParticleSystem.EmissionModule emission = _particleSystem.emission;
         ParticleSystem.ShapeModule shape = _particleSystem.shape;
         emission.rateOverTime = _gauge;
         shape.radius = _gauge / 2;
+
+
+        if (_gauge != (int)_slider.value)
+        {
+            //
+        }
+
+        _slider.value = _gauge;
 
         if (_isActive && _isHidden)
         {
