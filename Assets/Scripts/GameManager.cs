@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameMan : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-	public static GameMan Instance;
+	public static GameManager Instance;
 
 	[SerializeField] private Canvas _canvas;
 

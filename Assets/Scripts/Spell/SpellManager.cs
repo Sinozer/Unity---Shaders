@@ -10,8 +10,7 @@ public class SpellManager : MonoBehaviour
     private void Awake()
     {
         if (!_spellsHolder) return;
-        var temp = _spellsHolder.GetComponents<SpellBehaviour>();
-
+        SpellBehaviour[] temp = _spellsHolder.GetComponents<SpellBehaviour>();
         _spells.AddRange(temp);
     }
 
@@ -20,13 +19,9 @@ public class SpellManager : MonoBehaviour
         foreach (SpellBehaviour spell in _spells)
         {
             _currentSpell = spell;
-            if (Input.GetKeyDown(_currentSpell.SpellRef.Key))
-                Cast();
+            if (Input.GetKeyDown(_currentSpell.SpellRef.Key)) Cast();
         }
     }
 
-    public void Cast()
-    {
-        _currentSpell.Use();
-    }
+    private void Cast() => _currentSpell.Use();
 }

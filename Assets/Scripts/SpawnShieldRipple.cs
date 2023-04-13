@@ -7,18 +7,16 @@ public class SpawnShieldRipple : MonoBehaviour
 {
     public GameObject shieldRipples;
 
-    private VisualEffect shieldRipplesVFX;
+    private VisualEffect _shieldRipplesVFX;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            Debug.Log("lul");
-            var ripples = Instantiate(shieldRipples,transform) as GameObject;
-            shieldRipplesVFX = ripples.GetComponent<VisualEffect>();
-            shieldRipplesVFX.SetVector3("SphereCenter", collision.contacts[0].point);
+        if (!collision.gameObject.CompareTag("Bullet")) return;
+        
+        GameObject ripples = Instantiate(shieldRipples,transform);
+        _shieldRipplesVFX = ripples.GetComponent<VisualEffect>();
+        _shieldRipplesVFX.SetVector3("SphereCenter", collision.contacts[0].point);
 
-            Destroy(ripples, 2);
-        }
+        Destroy(ripples, 2);
     }
 }

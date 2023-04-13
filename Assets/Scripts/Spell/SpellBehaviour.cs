@@ -10,11 +10,16 @@ public abstract class SpellBehaviour : MonoBehaviour
         COOLDOWN
     }
 
-    public SpellState State { get => _state; }
-    protected SpellState _state = SpellState.IDLE;
+    public SpellState State => _state;
+    public GameObject Player => _player;
+    public int Blood => _blood;
+    public float Cooldown => _cooldown;
 
-    public GameObject Player { get => _player; }
-    protected GameObject _player;
+    public Spell SpellRef
+    {
+        get => _spellRef;
+        set => _spellRef = value;
+    }
 
     public void SetState(SpellState state)
     {
@@ -27,19 +32,8 @@ public abstract class SpellBehaviour : MonoBehaviour
                 _cooldown = SpellRef.Cooldown;
                 break;
         }
-        _state = state;
-    }
 
-    protected void CheckState()
-    {
-        switch (State)
-        {
-            case SpellState.IDLE:
-                break;
-            case SpellState.COOLDOWN:
-                if (Cooldown <= 0) SetState(SpellState.IDLE);
-                break;
-        }
+        _state = state;
     }
 
     public void UpdateState()
@@ -56,17 +50,43 @@ public abstract class SpellBehaviour : MonoBehaviour
         CheckState();
     }
 
-    public Spell SpellRef
+    public virtual bool Use()
     {
-        get => _spellRef;
-        set => _spellRef = value;
+        if (Cooldown > 0) return false;
+        _cooldown = SpellRef.Cooldown;
+
+        if (_state == SpellState.COOLDOWN) return false;
+        SetState(SpellState.COOLDOWN);
+
+        _blood = SpellRef.Blood;
+
+        if (_blood > 0 && PlayerManager.Instance.BloodGauge < _blood) return false;
+
+        PlayerManager.Instance.BloodGauge -= _blood;
+
+        return true;
     }
+
     [SerializeField] protected Spell _spellRef;
 
-    public float Cooldown { get => _cooldown; }
+    protected SpellState _state = SpellState.IDLE;
+
+    protected GameObject _player;
+
+    protected void CheckState()
+    {
+        switch (State)
+        {
+            case SpellState.IDLE:
+                break;
+            case SpellState.COOLDOWN:
+                if (Cooldown <= 0) SetState(SpellState.IDLE);
+                break;
+        }
+    }
+
     protected float _cooldown;
 
-    public int Blood { get => _blood; }
     protected int _blood;
 
     private void Awake()
@@ -78,27 +98,5 @@ public abstract class SpellBehaviour : MonoBehaviour
     private void Update()
     {
         UpdateState();
-    }
-
-    virtual public bool Use()
-    {
-        if (Cooldown > 0) return false;
-        _cooldown = SpellRef.Cooldown;
-
-        if (_state == SpellState.COOLDOWN) return false;
-        SetState(SpellState.COOLDOWN);
-
-        _blood = SpellRef.Blood;
-
-        if (_blood > 0 && PlayerManager.Instance.BloodGauge < _blood)
-        {
-            return false;
-        }
-        else
-        {
-            PlayerManager.Instance.BloodGauge -= _blood;
-        }
-
-        return true;
     }
 }

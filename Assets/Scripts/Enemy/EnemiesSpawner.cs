@@ -2,35 +2,34 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-namespace Enemy {
-	public class EnemiesSpawner : MonoBehaviour {
-		[SerializeField] private GameObject enemyPrefab;
+namespace Enemy
+{
+    public class EnemiesSpawner : MonoBehaviour
+    {
+        [SerializeField] private GameObject enemyPrefab;
 
-		private float _spawnDelay;
-		private float _countTime;
+        private float _spawnDelay;
+        private float _countTime;
 
-		private int _enemiesSpawned;
-	
-		// Start is called before the first frame update
-		void Start() {
-			DontDestroyOnLoad(this);
-			_spawnDelay = 2f;
-		}
+        private int _enemiesSpawned;
 
-		// Update is called once per frame
-		void Update() {
-			_countTime += Time.deltaTime;
-			if (_countTime >= _spawnDelay) {
-				NavMeshHit hit;
-				NavMesh.SamplePosition(GeneratePosition(),out hit, Mathf.Infinity,1);
-				Instantiate(enemyPrefab, hit.position, Quaternion.identity);
-				_countTime = 0;
-				_enemiesSpawned++;
-			}
-		}
+        private void Start()
+        {
+            DontDestroyOnLoad(this);
+            _spawnDelay = 2f;
+        }
 
-		private Vector3 GeneratePosition() {
-			return new Vector3(Random.Range(5, 45), Random.Range(5, 7), Random.Range(5, 45));
-		}
-	}
+        private void Update()
+        {
+            _countTime += Time.deltaTime;
+            if (!(_countTime >= _spawnDelay)) return;
+
+            NavMesh.SamplePosition(GeneratePosition(), out var hit, Mathf.Infinity, 1);
+            Instantiate(enemyPrefab, hit.position, Quaternion.identity);
+            _countTime = 0;
+            _enemiesSpawned++;
+        }
+
+        private static Vector3 GeneratePosition() => new(Random.Range(5, 45), Random.Range(5, 7), Random.Range(5, 45));
+    }
 }
