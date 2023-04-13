@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MeshTrail : MonoBehaviour
@@ -39,11 +38,7 @@ public class MeshTrail : MonoBehaviour
             time -= meshRefreshRate;
 
             if (skinnedMeshRenderer == null)
-            {
-
-                GameObject gobj = GameObject.Find("Armature");
                 skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
-            }
 
             GameObject newObject = new GameObject();
 

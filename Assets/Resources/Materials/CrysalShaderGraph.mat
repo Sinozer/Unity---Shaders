@@ -49,10 +49,10 @@ Material:
     - _metalic: 0
     - _smoothness: 0
     m_Colors:
-    - _BottomColor: {r: 4, g: 4, b: 4, a: 1}
+    - _BottomColor: {r: 0.046197742, g: 2.040403, b: 1.2449278, a: 1}
     - _Color: {r: 11.25054, g: 14.49057, b: 1.57209, a: 0}
-    - _CristalColor: {r: 4, g: 0, b: 0, a: 0}
-    - _TopColor: {r: 4, g: 4, b: 4, a: 1}
+    - _CristalColor: {r: 0.17633113, g: 0, b: 0.13650084, a: 0}
+    - _TopColor: {r: 7.254765, g: 0.41385284, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2128033633779234563
 MonoBehaviour:
