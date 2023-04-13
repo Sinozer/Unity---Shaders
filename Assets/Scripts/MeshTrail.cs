@@ -5,10 +5,10 @@ using UnityEngine;
 public class MeshTrail : MonoBehaviour
 {
 
-    public float activeTime = 2f;
+    public float activeTime = 0.2f;
 
-    public float meshRefreshRate = 0.1f;
-    public float meshDestroyDelay = 3f;
+    public float meshRefreshRate = 0.02f;
+    public float meshDestroyDelay = 0.2f;
 
 
     private bool _isTrailActive;
@@ -63,6 +63,7 @@ public class MeshTrail : MonoBehaviour
 
 
             _isTrailActive = false;
+            GetComponent<Rigidbody>().useGravity = true;
             yield return new WaitForSeconds(meshRefreshRate);
         }
     }
