@@ -1,58 +1,62 @@
 using System;
 using UnityEngine;
 
-namespace Player {
-	public class PlayerManager : MonoBehaviour {
-        public static PlayerManager Instance;
+public class PlayerManager : MonoBehaviour
+{
+    [SerializeField] private int maxHealth;
+    public int BloodGauge { get; set; }
 
-        [SerializeField] private int maxHealth;
+    struct Levels
+    {
+        public int _currentLevel;
+        public int _currentXp;
+        public int _xpToNextLvl;
+    }
 
-		public int BloodGauge { get; set; }
+    private Levels _levels;
 
-		struct Levels {
-			public int _currentLevel;
-			public int _currentXp;
-			public int _xpToNextLvl;
-		}
+    private int _currentHealth;
 
-		private Levels _levels;
-
-		private int _currentHealth;
-
-        private void Awake()
+    private void Awake()
+    {
+        if (Instance != null)
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
+            return;
         }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
-        // Start is called before the first frame update
-        void Start() {
-			_currentHealth = maxHealth;
-			_levels._currentLevel = 1;
-			_levels._currentXp = 0;
-			_levels._xpToNextLvl = 1 * 10;
-		}
+    // Start is called before the first frame update
+    void Start()
+    {
+        _currentHealth = maxHealth;
+        _levels._currentLevel = 1;
+        _levels._currentXp = 0;
+        _levels._xpToNextLvl = 1 * 10;
+    }
 
-		// Update is called once per frame
-		void Update() {
-			if (_currentHealth <= 0) {
-				Debug.Log("Dead");
-				GameMan.Instance.EndGame();
-			}
-		}
+    // Update is called once per frame
+    void Update()
+    {
+        if (_currentHealth <= 0)
+        {
+            Debug.Log("Dead");
+            GameMan.Instance.EndGame();
+        }
+    }
 
-		private void OnTriggerEnter(Collider other) {
-			//Debug.Log("Col");
-			bool isElite = Convert.ToBoolean(other.GetComponent<Renderer>().materials[1].GetInteger("_Elite"));
-		
-			if (other.gameObject.CompareTag("Enemy")) {
-				_currentHealth -= isElite ? 20 : 10;
-			}
-		}
-	}
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Col");
+
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("HIT");
+            bool isElite = collision.transform.GetComponent<EnemyBehaviour>().IsElite;
+            _currentHealth -= isElite ? 20 : 10;
+        }
+    }
 }

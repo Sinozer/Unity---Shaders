@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4101645566317300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 7944241965456728672}
   - component: {fileID: 8913596135337745592}
   - component: {fileID: 4969588775561100699}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6de62573a1a7a14e9186a6a58292fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _frozenMaterial: {fileID: 2100000, guid: 897fd1d05ac1a0d44aa5dbca4c331e59, type: 2}
   _mesh: {fileID: 137967903436195398}
   player: {fileID: 0}
 --- !u!195 &7944241965456728672
@@ -188,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835855552950442}
   - component: {fileID: 137967903436195398}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,6 +233,7 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: c305dc61d91586d4a9e6c995acbe1cb4, type: 2}
   - {fileID: 2100000, guid: b294040366b18d9459dcd3a35803ce5b, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -283,7 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4927607030202066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EyeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4005167794705762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Side_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4291625662876416}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4387939680762156}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpperEyeCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4687563793318712}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BottomEyeCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4694489855111548}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Side_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4491811072490378}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4067084450705952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4174967432776898}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EyeCTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
