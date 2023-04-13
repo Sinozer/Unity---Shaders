@@ -4,19 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - CinemachineTarget
+  - Enemy
+  - Spell
   - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Scan
+  - Player
+  - Shield
+  - Entity
   - 
   - 
   - 
